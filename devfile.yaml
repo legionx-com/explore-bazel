@@ -1,0 +1,17 @@
+apiVersion: 1.0.0
+metadata:
+  name: bazel
+projects:
+  - name: examples
+    source:
+      location: 'https://github.com/bazelbuild/examples'
+      type: git
+components:
+  - alias: bazel
+    type: dockerimage
+    image: 'registry.rebelsoft.com/bazel'
+    command:
+      - sleep
+      - infinity
+    memoryLimit: 1512Mi
+    mountSources: true
